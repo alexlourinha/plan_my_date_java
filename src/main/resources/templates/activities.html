@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/base.html :: head"></head>
+<body>
+<nav th:insert="fragments/base.html :: navbar"></nav>
+
+
+<div th:each="activity: ${activities}">
+<h2 th:text="${activity.title}"></h2>
+<span class="badge badge-secondary">{{ 'Created on: ' + post['created'] + ' By: ' + post['createdby'].title() }}</span>
+<a href="#">
+    <span class="badge badge-primary">Edit</span>
+</a>
+<p th:text="${activity.content}"></p>
+</div>
+
+</body>
+<div th:replace="fragments/base.html :: scripts"></div>
+</html>

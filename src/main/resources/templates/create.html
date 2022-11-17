@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/base.html :: head"></head>
+<body>
+<nav th:insert="fragments/base.html :: navbar"></nav>
+<h1>{% block title %} Create a New Post {% endblock %}</h1>
+
+<form method="post" th:action="@{/create}" th:object="${activity}"   >
+  <p>Title: <input type="text" th:field="*{title}" /></p>
+  <p>Message: <input type="text" th:field="*{content}" /></p>
+  <p>Created by: <input type="text" th:field="*{createdBy}" /></p>
+  <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
